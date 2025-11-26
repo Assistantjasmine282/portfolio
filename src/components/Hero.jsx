@@ -158,7 +158,7 @@ const Hero = () => {
             </a>
 
             <a
-              href="https://www.linkedin.com/in/jasminerai123456789
+              href="https://www.linkedin.com/in/jasmine-rai-6a422427b
 
 "
               target="_blank"
@@ -198,7 +198,7 @@ const Hero = () => {
             </button>
 
             <a
-              href="/JasmineResume2026Batch.pdf"
+              href="/JasmineRai2026Batch.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-2 rounded-full bg-gradient-to-r from-teal-500 to-teal-700 hover:opacity-90 text-white transition-all"

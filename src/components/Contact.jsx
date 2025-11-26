@@ -191,7 +191,7 @@ const Contact = () => {
           />
 
           <div className="flex gap-5 mt-6">
-            <a href="https://www.linkedin.com/in/jasminerai123456789" target="_blank">
+            <a href="https://www.linkedin.com/in/jasmine-rai-6a422427b" target="_blank">
               <FaLinkedin className="text-white text-3xl hover:text-blue-400 transition" />
             </a>
 
