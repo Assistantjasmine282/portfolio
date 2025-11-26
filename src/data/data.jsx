@@ -1,0 +1,218 @@
+import React, { useState, useEffect } from "react";
+import {
+  FaAngular,
+  FaBootstrap,
+  FaCss3Alt,
+  FaFacebook,
+  FaHtml5,
+  FaJs,
+  FaNodeJs,
+  FaReact,
+  FaSass,
+} from "react-icons/fa";
+import { BsTwitter, BsWhatsapp } from "react-icons/bs";
+import { LiaLinkedin } from "react-icons/lia";
+import { ImInstagram } from "react-icons/im";
+import { MdEmail, MdOutlineSettingsApplications } from "react-icons/md";
+import { PiPhone } from "react-icons/pi";
+import { CiLocationArrow1 } from "react-icons/ci";
+import { CiDatabase } from "react-icons/ci";
+import { SiWordpress } from "react-icons/si";
+import {  SiCanva } from "react-icons/si";
+
+
+
+
+import {
+  SiC,
+  SiCplusplus,
+  SiExpress,
+  SiFigma,
+  SiFirebase,
+  SiGit,
+  SiGithub,
+  SiJavascript,
+  SiMongodb,
+  SiMysql,
+  SiNetlify,
+  SiPostgresql,
+  SiPostman,
+  SiRedux,
+  SiSpring,
+  SiTypescript,
+  SiVercel,
+} from "react-icons/si";
+import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
+import {
+  GiMaterialsScience,
+  GiNorthStarShuriken,
+  GiSandsOfTime,
+} from "react-icons/gi";
+import { DiJava, DiPython, DiVisualstudio } from "react-icons/di";
+import { TbBrandCSharp } from "react-icons/tb";
+import { IoIosStarOutline } from "react-icons/io";
+export const skillsData = [
+  {
+    title: "Frontend",
+    skills: [
+      { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
+      { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
+      
+      { name: "JavaScript", icon: <FaJs className="text-yellow-400" /> },
+      { name: "React JS", icon: <FaReact className="text-cyan-400" /> },
+      {
+        name: "Tailwind CSS",
+        icon: <RiTailwindCssFill className="text-teal-400" />,
+      },
+      {
+        name: "GSAP",
+        icon: <MdOutlineSettingsApplications className="text-green-500" />,
+      },
+      { name: "WordPress", icon: <SiWordpress className="text-blue-400 text-xl" /> },
+
+  
+    ],
+  },
+  {
+    title: "Backend",
+    skills: [
+      
+      { name: "Node JS", icon: <FaNodeJs className="text-green-400" /> },
+      { name: "Express JS", icon: <SiExpress className="text-gray-300" /> },
+      { name: "MySQL", icon: <SiMysql className="text-blue-400" /> },
+      { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
+     
+      { name: "SQL", icon: <CiDatabase className="text-sky-500 text-xl" /> },
+
+    ],
+  },
+  {
+    title: "Languages",
+    skills: [
+      { name: "C", icon: <SiC className="text-blue-400" /> },
+
+      { name: "Java", icon: <DiJava className="text-red-600" /> },
+      
+      {
+        name: "JavaScript",
+        icon: <SiJavascript className="text-yellow-400" />,
+      },
+      
+    ],
+  },
+  {
+    title: "Tools",
+    skills: [
+      { name: "Git", icon: <SiGit className="text-orange-500" /> },
+      { name: "GitHub", icon: <SiGithub className="text-white" /> },
+      { name: "VS Code", icon: <DiVisualstudio className="text-blue-500" /> },
+      { name: "Vercel", icon: <SiVercel className="text-white" /> },
+      { name: "Netlify", icon: <SiNetlify className="text-teal-400" /> },
+      { name: "Figma", icon: <SiFigma className="text-pink-500" /> },
+      { name: "Canva", icon: <SiCanva className="text-purple-400" /> },
+      
+    ],
+  },
+];
+
+// Navigation data
+ export const navItems = [
+  { id: "home", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "skills", label: "Skills" },
+  { id: "projects", label: "Project" },
+  { id: "contact", label: "Contact" },
+];
+
+// // Testimonials data
+// export const testimonials = [
+//   {
+//     name: "Sarah Johnson",
+//     position: "CEO, TechStart",
+//     content:
+//       '"Imam delivered exceptional work on our website redesign. His attention to detail and communication throughout the project was impressive."',
+//     image:
+//       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+//   },
+//   {
+//     name: "Michael Chen",
+//     position: "Product Manager, InnovateCo",
+//     content:
+//       '"Working with Imam was a great experience. He transformed our complex requirements into a beautiful, user-friendly interface."',
+//     image:
+//       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+//   },
+//   {
+//     name: "David Wilson",
+//     position: "Founder, StartupHub",
+//     content:
+//       '"Imam\'s technical skills and creative design solutions helped us create an engaging platform that our users love. Highly recommended!"',
+//     image:
+//       "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+//   },
+// ];
+
+// Portfolio data
+export const projectsItems = [
+  {
+    title: "E-CommerceWebsite",
+    category: "Web Design",
+    image:"https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+      
+    github:"https://github.com/Assistantjasmine282/Assistantjasmine282",
+    demo: "https://fullstack-ecommerce.netlify.app/",
+    adminDemo:"https://fullstack-ecommerce-add-admin.netlify.app/"
+    },
+  {
+    title: "SchoolManagement",
+    category: "Fullstack Project",
+    image:
+      "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+      
+      github: "https://github.com/Assistantjasmine282/School-Management-System",
+    demo: "https://realschoolmanagementsystem.netlify.app/"
+ 
+    },
+  {
+    title: "STC data Management",
+    category: "Web Development",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1115&q=80",
+  
+       github: "https://github.com/Assistantjasmine282/STC_EC06",
+    demo: "https://ecommerce-demo.netlify.app"
+    },
+];
+export const experiences = [
+  {
+    id: 1,
+    company: "Webverse Digital",
+    logo: <GiSandsOfTime />, // replace with actual logo
+    title: "Fullstack Developer",
+    period: "April 2024 - Present",
+    description:
+      "Developed dynamic and scalable web applications using the MERN stack, handling both frontend and backend development. Collaborated with cross-functional teams to build responsive UI, implement RESTful APIs, and optimize application performance in an agile environment.",
+    skills: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React JS",
+      "TypeScript",
+      "Node JS",
+      "Tailwind CSS",
+      "MongoDB",
+      "Redux",
+      "Next JS",
+    ],
+  },
+  {
+    id: 2,
+    company: "Agumentik Group of Companies",
+    logo: <IoIosStarOutline />, // replace with actual logo
+    title: "Fullstack Engineer",
+    period: "July 2023 - March 2024",
+    description:
+      "Contributed to innovative projects as a Fullstack Engineer, leading both frontend and backend development using modern technologies.",
+    skills: ["React JS", "Node JS", "Express", "MongoDB"],
+  },
+];

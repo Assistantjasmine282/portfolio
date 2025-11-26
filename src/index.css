@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+*{
+    font-family:"Robot", sans-serif;
+}
+
+.text-outline{
+    -webkit-text-stroke:1px #fff ;
+    color: transparent;
+}
